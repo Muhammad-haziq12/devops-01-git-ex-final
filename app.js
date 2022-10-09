@@ -2,15 +2,19 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var hbs = require('hbs');
-
+const month = new Date().toLocaleString('en-us', { month: 'long' });
 
 // View Engine Setup
 app.set('views', path.join(__dirname))
 app.set('view engine', 'hbs')
 
 app.get('/', function (req, res) {
+
+	
+
 	res.render('./views/Home', {
-		title: 'My new title',
+		title: 'M.H - E.S ',
+	currentmonth : month,
 		cards: [
 			{
 				title: 'Our Changing Planet',
